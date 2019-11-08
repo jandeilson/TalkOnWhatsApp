@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Talk On WhatsApp</title>
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Example Page</h1>
+<h2>Talk on WhatsApp</h2>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+
+
+<div id="TalkOnWhatsApp-app" class="">
+    <div class="TalkOnWhatsApp-container">
+        <iframe id="TalkOnWhatsApp-launcher" name="TalkOnWhatsApp-launcher" title="Talk on WhatsApp Launcher" allowfullscreen></iframe>
+        <iframe id="TalkOnWhatsApp-modal" name="TalkOnWhatsApp-modal" title="Talk on WhatsApp Modal" allowfullscreen></iframe> <!-- criar esse iframe quando clicar no launcher -->
+    </div>
+</div>
+
+<script>
+
+
+    // TalkOnWhatsApp App
+    let launcher = document.getElementById("TalkOnWhatsApp-launcher"),
+        modal = document.getElementById("TalkOnWhatsApp-modal");
+
+    // launcher
+    launcher = launcher.contentWindow || ( launcher.contentDocument.document || launcher.contentDocument);
+    launcher.document.open();
+    launcher.document.write('<link rel="stylesheet" href="style.css"/><div class="launcher-frame-btn"></div>');
+    launcher.document.close();
+
+    // modal
+    let modal_document = "MODAL DOCUMENT TEST";
+
+    modal = modal.contentWindow || ( modal.contentDocument.document || modal.contentDocument);
+    modal.document.open();
+    modal.document.write(modal_document);
+    modal.document.close();
+</script>
+
+</body>
+</html>
