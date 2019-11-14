@@ -14,9 +14,9 @@
     "postinstall": "rm -rf dist && yarn run build",
     "lint": "yarn ./node_modules/.bin/prettier --write --check --config ./.prettierrc \\\"**/*.js\\\" && eslint --fix ./src",
 
-    "css-build": "node-sass ./src/iframe/scss/ --output ./src/iframe/css/",
+    "css-build": "node-sass src/assets/scss/ --output ./src/assets/css/",
     "css-deploy": "yarn css-build && yarn css-postcss",
-    "css-postcss": "postcss --use autoprefixer --output ./src/iframe/example/css/main.css ./src/iframe/example/css/main.css",
+    "css-postcss": "postcss --use autoprefixer --output ./src/assets/css/main.css ./src/assets/css/main.css",
     "css-watch": "yarn css-build -- --watch",
 
     "release": "release-it patch --no-npm.publish"

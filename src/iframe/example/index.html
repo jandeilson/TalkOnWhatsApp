@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Talk On WhatsApp</title>
 
-    <link rel="stylesheet" href="../css/main.css"/>
-    <link rel="stylesheet" href="../css/TOWA-modal.css"/>
+
+
+
 </head>
 <body>
 
@@ -16,59 +17,7 @@
 
 
 
-<div id="TalkOnWhatsApp-app" class="">
-    <div class="TalkOnWhatsApp-container">
-        <iframe id="TalkOnWhatsApp-launcher" name="TalkOnWhatsApp-launcher" title="Talk on WhatsApp Launcher" allowfullscreen></iframe>
-        <div id="TalkOnWhatsApp-modal">
-
-        </div>
-    </div>
-</div>
-
-<span class="close">&times;</span>
-
-<script>
-
-
-    // TalkOnWhatsApp App
-    let launcher = document.getElementById("TalkOnWhatsApp-launcher"),
-        modal = document.getElementById("TalkOnWhatsApp-modal");
-
-    // launcher
-    launcher = launcher.contentWindow || ( launcher.contentDocument.document || launcher.contentDocument);
-    launcher.document.open();
-    launcher.document.write('<link rel="stylesheet" href="../css/TOWA-launcher.css"/><a href="#open-modal" class="launcher-btn"></a>');
-    launcher.document.close();
-
-    let iframe_modal = document.createElement("iframe");
-
-    // When the user clicks the button, open the modal
-    launcher.onclick = function() {
-        modal.appendChild(iframe_modal);
-
-        let modal_document = "MODAL DOCUMENT TEST";
-
-        iframe_modal = iframe_modal.contentWindow || ( iframe_modal.contentDocument.document || iframe_modal.contentDocument);
-        iframe_modal.document.open();
-        iframe_modal.document.write(modal_document);
-        iframe_modal.document.close();
-    };
-
-    let span = document.getElementsByClassName("close")[0];
-
-    span.onclick = function() {
-        modal.parentNode.removeChild(iframe_modal);
-    };
-
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-</script>
+<script type="text/javascript" src="../index.js"></script>
 
 </body>
 </html>

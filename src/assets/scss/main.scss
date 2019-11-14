@@ -1,0 +1,98 @@
+#TalkOnWhatsApp-launcher {
+  z-index: 987654321;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 1px 6px 0, rgba(0, 0, 0, 0.16) 0 2px 32px 0;
+  border: none;
+  animation: animation-launcher-frame;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation-fill-mode: forwards;
+}
+
+#TalkOnWhatsApp-modal {
+  position: absolute;
+  z-index: 987654321;
+  right: 20px;
+  bottom: 90px;
+  overflow: hidden;
+  border: none;
+  width: 376px;
+  height: 168px;
+}
+
+#TalkOnWhatsApp-modal.opened {
+  transition: all 1s ease-in;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-name: fadeIn;
+}
+
+#TalkOnWhatsApp-modal.closed {
+  transition: all 1s ease-out;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform-origin: right bottom;
+    transform:scale(0);
+
+  }
+  to {
+    opacity: 1;
+    transform-origin: right bottom;
+    transform: scale(1);
+  }
+}
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform-origin: right bottom;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform:scale(0);
+      transform-origin: right bottom;
+    }
+  }
+
+
+
+@-webkit-keyframes animation-launcher-frame {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    opacity: 1;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #TalkOnWhatsApp-modal {
+    width: 90%;
+  }
+}
