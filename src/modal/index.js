@@ -14,7 +14,7 @@ elementApp.innerHTML +=
 document.body.appendChild(elementApp);
 
 // > START < //
-startApp = () => {
+TalkOnWhatsApp_byJDeS = () => {
 
 // get base elements by id
     let container = document.getElementById("TalkOnWhatsApp-container");
@@ -58,7 +58,6 @@ startApp = () => {
                 modal.classList.remove("closed");
                 modal.style.display = "block";
             }
-
         });
     }, 1000);
 
@@ -106,4 +105,4 @@ startApp = () => {
 
 };
 
-startApp();
+TalkOnWhatsApp_byJDeS();
